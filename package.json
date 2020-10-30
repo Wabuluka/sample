@@ -1,0 +1,29 @@
+{
+  "name": "sample",
+  "version": "1.0.0",
+  "description": "A sample project to demonstrate TravisCI and his children",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "nyc mocha app.test.js --exit",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "coverage": "nyc report --reporter=text-lcov | coveralls && nyc report --reporter=lcov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wabuluka/sample.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wabuluka/sample/issues"
+  },
+  "homepage": "https://github.com/Wabuluka/sample#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "coveralls": "^3.1.0",
+    "mocha": "^8.2.0",
+    "nyc": "^15.1.0"
+  }
+}
