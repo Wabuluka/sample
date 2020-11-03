@@ -1,17 +1,19 @@
 
-class App {
-    static add(a, b) {
-      return a + b;
-    }
-    static substract(a, b) {
-      return a - b;
-    }
-    static multiply(a, b) {
-      return a * b;
-    }
-    static divide(a, b) {
-      return a / b;
-    }
-  }
-  
-module.exports = App;
+const express = require('express');
+const appRoutes = require('./routes/app');
+const bodyParser = require('body-parser');
+
+const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+const port = process.env.PORT || 8080;
+
+app.use(appRoutes)
+
+app.listen(port, () => {
+	console.log(`Server is running on PORT ${port}`);
+}); 
+
+module.exports = app;
